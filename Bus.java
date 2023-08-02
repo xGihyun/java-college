@@ -14,19 +14,32 @@ public class Bus {
 
     scan.nextLine();
 
+
+    double payment; 
+    double discountMultiplier = 1.0;
+
+    if (age >= 60) {
+      System.out.println("\nThe user is a senior, 20% discount will be applied.");
+      discountMultiplier -= 0.2;
+    }
+
     HashMap<String, Double> prices = new HashMap<>();
 
-    prices.put("a", 45000.0);
-    prices.put("b", 30000.0);
-    prices.put("o", 17000.0);
+    double CLASS_A = 45000.0 * discountMultiplier;
+    double CLASS_B = 30000.0 * discountMultiplier;
+    double ORDINARY = 17000.0 * discountMultiplier;
+
+    prices.put("a", CLASS_A);
+    prices.put("b", CLASS_B);
+    prices.put("o", ORDINARY);
 
     String busClass;
 
     do {
       System.out.println("\nEnter your bus class:\n");
-      System.out.println("A - Class A");
-      System.out.println("B - Class B");
-      System.out.println("O - Ordinary\n");
+      System.out.println("A - Class A  | " + CLASS_A);
+      System.out.println("B - Class B  | " + CLASS_B);
+      System.out.println("O - Ordinary | " + ORDINARY + "\n");
 
       busClass = scan.nextLine().toLowerCase();
 
@@ -36,16 +49,7 @@ public class Bus {
 
     } while(!prices.containsKey(busClass));
 
-
-    double payment; 
-    double discountMultiplier = 1.0;
-
-    if (age >= 60) {
-      System.out.println("\nThe user is a senior, 20% discount will be applied.\n");
-      discountMultiplier -= 0.2;
-    }
-
-    double priceToPay = prices.get(busClass) * discountMultiplier;
+    double priceToPay = prices.get(busClass);
 
     do {
       System.out.println("Enter your payment: ");
