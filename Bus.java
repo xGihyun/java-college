@@ -14,7 +14,6 @@ public class Bus {
 
     scan.nextLine();
 
-
     double payment; 
     double discountMultiplier = 1.0;
 
