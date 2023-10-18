@@ -14,7 +14,7 @@ public class Bus {
 
     scan.nextLine();
 
-    double payment; 
+    double payment;
     double discountMultiplier = 1.0;
 
     if (age >= 60) {
@@ -46,7 +46,7 @@ public class Bus {
         System.out.println("Invalid class, try again.\n");
       }
 
-    } while(!prices.containsKey(busClass));
+    } while (!prices.containsKey(busClass));
 
     double priceToPay = prices.get(busClass);
 
@@ -59,7 +59,7 @@ public class Bus {
         System.out.println("\nPayment is insufficient, required amount is: " + priceToPay + ". Try again.\n");
       }
 
-    } while(payment < priceToPay);
+    } while (payment < priceToPay);
 
     double change = payment - priceToPay;
 
