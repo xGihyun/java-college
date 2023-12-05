@@ -9,7 +9,7 @@ public class EggJOption {
         "<html><div style='text-align:center;'><b>Hello and welcome to Dizon Dairy Farm!</b><br><br>Press <span style='color:green; font-weight:bold'>OK</span> to continue</div></html>",
         "welcome_message", JOptionPane.PLAIN_MESSAGE);
 
-    String input = JOptionPane.showInputDialog(
+    String input = JOptionPane.showInputDialog(null,
         "<html>Our eggs cost <strong>PHP 36.00</strong> per dozen and <strong>PHP 4.75</strong> each!<br><br><b>Enter the number of eggs you want to buy:</b></html>");
 
     int numberOfEggs = Integer.parseInt(input);
